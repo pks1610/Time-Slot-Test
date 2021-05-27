@@ -1,0 +1,21 @@
+<div class="m-4 p-5">
+    <h1 class="text-center mb-3">Selected Time Slot: {{ selectedSlot[0].slot }}</h1>
+    <div class="formPos bg-white">
+        <form class="border p-3" #userForm="ngForm" (ngSubmit)="saveSlot(userForm)">
+            <div class="mb-3">
+              <label for="fName" class="form-label">First Name*</label>
+              <input name="fName" type="text" [(ngModel)]="firstName" class="form-control" id="fName" required>
+            </div>
+            <div class="mb-3">
+                <label for="lName" class="form-label">Last Name*</label>
+                <input name="lName" type="text" [(ngModel)]="lastName" class="form-control" id="lName" required>
+            </div>
+            <div class="mb-3">
+                <label for="mobile" class="form-label">Mobile No.*</label>
+                <input name="mobile" type="text" [(ngModel)]="mob" class="form-control" id="mobile" required>
+            </div>
+            <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Submit</button>
+            <button (click)="cancel()" class="btn btn-danger m-3">Cancel</button>
+        </form>
+    </div>
+</div>
